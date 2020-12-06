@@ -12,8 +12,8 @@ services:
       - 443:443
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./traefik.toml:/traefik.toml
-      - ./traefik_dynamic.toml:/traefik_dynamic.toml
+      - ./traefik.yml:/traefik.yml
+      - ./traefik_dynamic.yml:/traefik_dynamic.yml
       - ./acme.json:/acme.json
     networks:
       - web

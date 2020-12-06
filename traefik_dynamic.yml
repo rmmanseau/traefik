@@ -1,0 +1,17 @@
+http:
+  middlewares:
+    simpleAuth:
+      basicAuth:
+        users:
+          - 'admin:$apr1$EF.Cf/su$l4SiVTH.D5o58OIrY0wvn.'
+  routers:
+    api:
+      rule: Host(`traefik.manseau.dev`)
+      entrypoints:
+        - websecure
+      middlewares:
+        - simpleAuth
+      service: api@internal
+      tls:
+        certResolver: lets-encrypt
+
